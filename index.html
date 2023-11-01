@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>agencia de viajes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!--Encabezado con logo, menu y botón inicio de sesión--> 
+<header>
+    <div id="menu" class="menu"></div>
+        <a href="#home" class="logo"><img src="img/logo.png" alt="logo"></a>
+        <nav class="navbar">
+             <a href="#home">vuelos</a>
+             <a href="#destinos">destinos</a>
+             <a href="#experiencias">experiencias</a>
+             <a href="#opiniones">opiniones</a>
+             <a href="#contacto">contacto</a>
+        </nav>
+        <button type="button" class="login-btn" data-bs-toggle="modal" data-bs-target="#loginModal">
+            <i class="fa-solid fa-user-plus fa-2xl"></i>
+        </button>
+</header>
+<!--formulario login-->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="loginModalLabel">INICIAR SESIÓN</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form class="login-form" action="" method="post">
+                <input type="email" class="box" placeholder="ingresa tu email" required>
+                <input type="password" class="box" placeholder="ingresa tu contraseña" required>
+                <button type="submit" class="login-btn">Iniciar sesión</button>
+                <p>¿olvidaste tu contraseña? <a href="#">click aquí</a></p>
+                <p>¿no tienes una contraseña? <a href="#">regístrate aquí</a></p>
+           </form>
+        </div>
+    </div>
+    </div>
+</div>
+<!--seccion home, incluye barra de búsqueda y video de fondo-->
+<section class="home" id="home">
+    <div class="search-bar">
+        <div class="content">
+            <h1>¿A dónde quieres viajar?</h1>
+        </div>
+        <div class="search">
+        <form action="" onsubmit="return validarFechas()">
+            <label for="origen">Origen:</label>
+            <select name="origen" id="origen">
+                <option value="Bogota">Bogotá</option>
+                <option value="Sidney">Sídney</option>
+                <option value="Chicago">Chicago</option>
+                <option value="Montreal">Montreal</option>
+            </select>
+            <label for="destino">Destino:</label>
+            <select name="destino" id="destino">
+                <option value="Paris">París</option>
+                <option value="Londres">Londres</option>
+                <option value="Tokio">Tokio</option>
+                <option value="Aruba">Aruba</option>
+            </select>    
+            <label for="fecha_salida">Fecha de Salida:</label>
+            <input type="date" name="fecha_salida" id="fecha_salida" required>    
+            <label for="fecha_regreso">Fecha de Regreso:</label>
+            <input type="date" name="fecha_regreso" id="fecha_regreso" required>   
+            <label for="pasajeros">Pasajeros:</label>
+            <input type="number" name="pasajeros" id="pasajeros" min="1" value="1" required>  
+            <input class="submit-search" type="submit" value="Buscar Vuelos">
+        </form>
+        </div>    
+    </div>    
+    <div class="video-container">
+        <video src="img/clouds_-_7399 (720p).mp4" id="video-cloud" loop autoplay muted alt="video-cloud"></video>
+    </div>
+</section>
+<!--seccion destinos-->
+<section class="destinos" id="destinos">
+    <div class="titulos">
+        <video class="video-titulos" src="img/destinos.mp4" autoplay muted loop ></video>
+        <h3>Destinos</h3>
+    </div>
+    <div class="tarjetas-destinos">
+        <div class="card">
+            <img src="img/paris.jpg" class="card-img-top" alt="paris">
+            <div class="card-body">
+                <h5 class="card-title">París</h5>
+                <p class="card-text">París, la Ciudad de la Luz, te espera con su encanto único. Descubre la magia de la capital francesa.</p>
+                <a href="https://www.paris.fr/tourisme" target="_blank" class="btn-destinos">Conoce París</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img/londres.jpg" class="card-img-top" alt="Londres">
+            <div class="card-body">
+                <h5 class="card-title">Londres</h5>
+                <p class="card-text">Londres, una ciudad vibrante y llena de historia te invita a explorar sus tesoros. ¡No te la pierdas!</p>
+                <a href="https://www.visitlondon.com/" target="_blank" class="btn-destinos">Conoce Londres</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img/tokio.jpg" class="card-img-top" alt="Tokio">
+            <div class="card-body">
+                <h5 class="card-title">Tokio</h5>
+                <p class="card-text">Tokio, una metrópolis futurista y llena de tradición, te espera para una experiencia única en Japón.</p>
+                <a href="https://www.gotokyo.org/en/index.html" target="_blank" class="btn-destinos">Conoce Tokio</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img/aruba.jpg" class="card-img-top" alt="Aruba">
+            <div class="card-body">
+                <h5 class="card-title">Aruba</h5>
+                <p class="card-text">Aruba, una isla paradisíaca en el Caribe, con playas y aventuras inolvidables. ¡Descubre el paraíso! </p>
+                <a href="https://www.aruba.com/es" target="_blank" class="btn-destinos">Conoce Aruba</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!--seccion experiencias-->
+<section class="experiencias" id="experiencias">
+    <div class="titulos">
+        <video class="video-titulos" src="img/experiencias.mp4" autoplay muted loop ></video>
+        <h3>Experiencias</h3>
+    </div>
+    <div class="experiencias-hover">
+        <div class="card">
+            <img src="img/paris-tour.jpg" class="card-img-top" alt="paris-tour">
+            <div class="overlay">
+                <h5 class="card-title">Disfruta París</h5>
+                <p class="card-text">Embárcate en un tour por París y descubre la magia de la Ciudad de la Luz: la Torre Eiffel, el Louvre y más. ¡Vive una experiencia inolvidable en París!</p>
+                <a href="https://www.tripadvisor.co/Attractions-g187147-Activities-c42-Paris_Ile_de_France.html" target="_blank" class="btn-destinos">Conoce más</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img/london-tour.jpg" class="card-img-top" alt="Londres-tour">
+            <div class="overlay">
+                <h5 class="card-title">Disfruta Londres</h5>
+                <p class="card-text"> Explora la riqueza histórica de Londres en un tour emocionante. Descubre sus icónicos monumentos y sumérgete en su encanto único.</p>
+                <a href="https://www.tripadvisor.co/Attractions-g186338-Activities-c42-London_England.html" target="_blank" class="btn-destinos">Conoce más</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img/tokio-tour.jpg" class="card-img-top" alt="Tokio-tour">
+            <div class="overlay">
+                <h5 class="card-title">Disfruta Tokio</h5>
+                <p class="card-text">Sumérgete en la fascinante cultura de Tokio con nuestros tours. Desde la modernidad de Shibuya hasta la tradición en Asakusa, Tokio te espera.</p>
+                <a href="https://www.tripadvisor.es/Attractions-g298184-Activities-c42-Tokyo_Tokyo_Prefecture_Kanto.html" target="_blank" class="btn-destinos">Conoce más</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img/aruba-tour.jpg" class="card-img-top" alt="Aruba-tour">
+            <div class="overlay">
+                <h5 class="card-title">Disfruta Aruba</h5>
+                <p class="card-text">Descubre el paraíso en Aruba con nuestros tours. Playas de ensueño, aventuras submarinas y atardeceres inolvidables te esperan en este rincón del Caribe.</p>
+                <a href="https://www.tripadvisor.co/Attractions-g147247-Activities-c42-Aruba.html" target="_blank" class="btn-destinos">Conoce más</a>
+            </div>
+        </div> 
+    </div>    
+</section>
+<!--seccion opiniones-->
+<section class="opiniones" id="opiniones">
+    <div class="titulos">
+        <video class="video-titulos" src="img/opiniones.mp4" autoplay muted loop ></video>
+        <h3>Opiniones</h3>
+    </div>
+    <div class="carrusel">
+        <div id="carouselInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" >
+              <div class="carousel-item active" data-bs-interval="5000">
+                <div class="card">
+                    <img src="img/usuario1.jpg" class="card-img-top" alt="foto-usuario-1">
+                    <div class="card-body">
+                      <h5 class="card-title">Un Viaje Inolvidable a Londres: Experiencia de 5 Estrellas</h5>
+                      <p class="card-text">Mi viaje a Londres con esta agencia superó mis expectativas. Desde el alojamiento hasta los tours, todo fue de primera clase. La atención y planificación fueron excepcionales. ¡Recomiendo esta agencia sin duda!</p>
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="5000">
+                <div class="card">
+                    <img src="img/usuario2.jpg" class="card-img-top" alt="foto-usuario-2">
+                    <div class="card-body">
+                      <h5 class="card-title">Tokio en su Máxima Expresión: Un Viaje Inolvidable con Esta Agencia</h5>
+                      <p class="card-text">Mi viaje a Tokio con esta agencia fue excepcional. Organización impecable, recomendaciones locales auténticas y una atención al cliente excepcional. ¡Descubrí la magia de Tokio gracias a ellos!</p>
+                    </div>
+                  </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="5000">
+                <div class="card">
+                    <img src="img/usuario3.jpg" class="card-img-top" alt="foto-usuario-3">
+                    <div class="card-body">
+                      <h5 class="card-title">Toda una Aventura en Aruba: Una Experiencia de Viaje Inolvidable</h5>
+                      <p class="card-text">Mi viaje a Aruba con esta agencia fue espectacular. Desde la planificación hasta el regreso, todo fue perfecto. Excelentes hoteles, tours emocionantes y atención personalizada. ¡Una experiencia inolvidable!</p>
+                    </div>
+                  </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="5000">
+                <div class="card">
+                    <img src="img/usuario4.jpg" class="card-img-top" alt="foto-usuario-4">
+                    <div class="card-body">
+                      <h5 class="card-title">París como un Sueño: Un Viaje Inolvidable con esta Agencia</h5>
+                      <p class="card-text">Mi viaje a París con esta agencia fue inolvidable. Desde la Torre Eiffel hasta los encantadores cafés, todo fue perfectamente planificado. La atención al detalle y la hospitalidad hicieron mi experiencia excepcional.</p>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselInterval" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselInterval" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div>
+</section>
+<!--seccion contacto-->
+<section class="contacto" id="contacto">
+    <div class="titulos">
+        <video class="video-titulos" src="img/contacto.mp4" autoplay muted loop ></video>
+        <h3>Contacto</h3>
+    </div>
+    <div class="formulario-de-contacto">
+        <div class="imagen-contacto">
+            <img src="img/contacto1.png" alt="imagen-contacto1">
+            <img src="img/contacto2.jpg" alt="imagen-contacto2">
+            <img src="img/contacto3.jpg" alt="imagen-contacto3">
+            <img src="img/contacto4.jpg" alt="imagen-contacto4">
+        </div>
+        <div class="formulario-contacto">
+            <form class="form-control" action="back/contacto.php" method="post">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre" required>
+                        </div>
+                    </div>        
+                    <div class="col-sm-6">
+                        <div class="form-group">        
+                            <input type="email" class="form-control" id="email" name="email" placeholder="email" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input type="number" class="form-control" id="telefono" name="telefono" placeholder="teléfono" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="asunto" name="asunto" placeholder="asunto" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <textarea placeholder="mensaje" class="form-control" id="mensaje" name="mensaje" required rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <button type="submit" class="contact-btn">Enviar mensaje</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<!--pie de página-->
+<footer>
+    <div class="contain-main-footer">
+        <div class="acerca-de-nosotros">
+            <h4>Acerca de nosotros</h4>
+            <p>Descubre el mundo con nuestra agencia de viajes. Con una década de experiencia, te ofrecemos destinos emocionantes y servicios de alta calidad. Nuestra pasión es hacer tus sueños de viaje realidad. Únete a nosotros y comienza tu próxima aventura hoy.</p>                                          
+        </div>
+        <div class="regulatory">
+            <h4>Normatividad general</h4>
+            <ul>
+                <li>
+                    <a href="https://www.sic.gov.co/" target="_blank" class="btn-regulatory">Superintendencia de Industria y Comercio</a>
+                </li>
+                <li>
+                    <a href="https://www.aerocivil.gov.co/" target="_blank" class="btn-regulatory">Aerocivil</a>
+                </li>
+                <li>
+                    <a href="https://www.rues.org.co/RNT" target="_blank" class="btn-regulatory">Rues</a>
+                </li>
+                <li>
+                    <a href="https://www.iatatravelcentre.com/world.php" target="_blank" class="btn-regulatory">Mapa de regulaciones de viaje COVID-19</a>
+                </li>
+            </ul>
+        </div>
+        <div class="location">
+            <h4>Ubicación</h4>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3894.896948013613!2d-70.04030825437789!3d12.52298545262192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e8538cfe25a77db%3A0xf16a8a3e89818c2f!2sAruba!5e0!3m2!1ses-419!2sco!4v1698243452798!5m2!1ses-419!2sco" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div class="social-media">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="copy-right">
+        <span>© Copyright 2023 | Sitio creado y administrado Diana</span>
+    </div>
+</footer>
+<script src="https://kit.fontawesome.com/5be29f90c7.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="js/js.js" defer data-deferred="1"></script> 
+</body>
+</html>

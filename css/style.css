@@ -1,0 +1,565 @@
+*{
+    font-family: 'Kalam', cursive;
+    text-decoration: none;
+}
+/*estilo encabezado*/
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    background:#260C02;
+    z-index: 1000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 0 9%;
+}
+header .navbar a{
+    color: #60A4BF;
+    font-weight: 1000;
+    font-size: 200%;
+    margin: 1rem;
+    text-transform: capitalize;
+    text-decoration: none
+}
+header .navbar a:hover{
+    color: #F2CAB3;
+}
+header .logo img{
+    width: 15vh;
+}
+header .login-btn i{
+    color: #60A4BF;
+}
+header .login-btn i:hover{
+    color: #F2CAB3;
+}
+/*estilo formulario*/
+.modal-header h2{  
+ color: #260C02;
+ font-weight: bolder;
+ font-size: 2rem;
+}
+.modal-content{
+  background-image: url("../img/fondo-login.jpg");
+  background-size: cover;
+  font-size: 1.5rem;
+  color: #260C02;
+  text-align: center;
+}
+.login-form input, button{
+  border-radius: 10px;
+  border-color: #260C02;
+  color: #260C02;
+}
+.modal-body .login-form input{
+    margin-top: 1rem;
+}
+.login-btn{
+    background-color:#260C02;
+    color: #60A4BF;
+    border: none;
+    text-align: center;
+    font-weight: 500;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+}
+.modal-body .login-form button:hover{
+    font-weight: 1000;
+}
+.modal-body p a{
+color: #60A4BF;
+text-decoration: none;
+}
+.modal-body p a:hover{
+    font-weight: bolder;
+}
+.modal-body .login-form ::placeholder{
+    text-align: center;
+}
+/*estilos generales*/
+.titulos {
+    position: relative;
+    height: 20vh;
+}
+.video-titulos, h3{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+.video-titulos {
+    object-fit: cover;
+}
+.titulos h3 {
+    position: absolute;
+    font-size: 7vw;
+    font-weight: bolder;
+    line-height: 15vw;
+    text-transform: uppercase;
+    text-align: center;
+    background: white;
+    mix-blend-mode:screen;
+  }
+/*estilo seccion home, incluye barra de búsqueda y video de fondo*/
+section .video-container video{
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: -1000;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    position: relative;
+    z-index: 00;
+}
+.home .search-bar{
+    text-align: center;
+    font-size: 130%;
+    color: #260C02;
+    font-weight: bolder;
+}
+.home .search-bar h1{
+    font-size: 250%;
+    color: #260C02;
+    font-weight: bolder;
+    padding-bottom: 4vh;
+}
+.home .search .submit-search{
+    background-color: #260C02;
+    color: #60A4BF;
+    font-weight: bolder;
+    margin-left: 4vh;
+}
+.home .search .submit-search:hover{
+    color: #F2CAB3;
+}
+.home .search #pasajeros{
+ width: 10vh;
+}
+/*estilo sección destinos*/
+.destinos{
+    padding-top: 7vh;
+}
+section .tarjetas-destinos{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    padding: 0.5rem 0.5rem 2rem 0.5rem;
+}
+.destinos .tarjetas-destinos .card{
+    text-align: center;
+    border-color: #260C02;
+} 
+.destinos .tarjetas-destinos h5{
+    color: #260C02;
+    font-weight: bolder;
+    font-size: 200%;
+}
+.destinos .tarjetas-destinos p{
+    font-size: 130%;
+}
+.destinos .tarjetas-destinos .btn-destinos{
+    background-color: #260C02;
+    color: #60A4BF;
+    font-weight: bolder;
+    text-decoration: none;
+    padding: 0 1rem;
+    font-size: 130%;
+}
+.destinos .tarjetas-destinos .btn-destinos:hover{
+    color: #F2CAB3;
+}
+.destinos .tarjetas-destinos .card-img-top{
+    width: 100%;
+    height: 40vh;
+}
+/*estilo sección experiencias*/
+.experiencias{
+    padding-top: 7vh;
+}
+section .experiencias-hover{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding: 2rem 0.5rem 0 0.5rem;
+    height: 70vh;
+    grid-auto-rows: minmax(100px, auto);
+}
+.experiencias .experiencias-hover .card{
+    text-align: center;
+    border-color: #260C02;
+} 
+.experiencias .experiencias-hover h5{
+    color: #260C02;
+    font-weight: bolder;
+    font-size: 200%;  
+}
+.experiencias .experiencias-hover p{
+    font-size: 130%;
+    font-weight: bolder;
+}
+.experiencias .experiencias-hover .btn-destinos{
+    background-color: #260C02;
+    color: #60A4BF;
+    font-weight: bolder;
+    text-decoration: none;
+    padding: 0 1rem;
+    font-size: 130%;
+}
+.experiencias .experiencias-hover .btn-destinos:hover{
+    color: #BF8563;
+}
+.experiencias .experiencias-hover .card-img-top{
+    width: auto;
+    height: 100%;
+}
+.experiencias .experiencias-hover .card{
+    position: relative;    
+}
+.experiencias .experiencias-hover .overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.75;
+    background-color: #F2CAB3;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: 0.5s linear;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}     
+.experiencias .experiencias-hover .card:hover .overlay{
+    height: 100%; 
+}
+/*estilo sección opiniones*/
+.opiniones{
+    padding-top: 7vh;
+}
+.opiniones .carrusel{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.opiniones .carousel-inner{
+    margin-top: 2rem;  
+}
+.opiniones .carousel-inner .card{
+    text-align: center;
+    width: 65vh;
+    border-color: #260C02;
+}
+.opiniones .carousel-inner .card h5{
+    color: #260C02;
+    font-weight: bolder;
+    font-size: 150%;
+}
+.opiniones .carousel-inner .card p{
+    font-size: 120%;
+    color: #260C02;
+}
+.opiniones .carousel-inner .card-img-top{
+    width: 100%;
+    height: 35vh;
+}
+.opiniones .carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23260C02' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+   }
+.opiniones .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23260C02' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+   }
+/*estilo sección contacto*/
+.contacto{
+    padding-top: 7vh;
+}
+section .formulario-de-contacto{
+    margin: 2rem 1rem 2rem 1rem;
+    display: flex;   
+}
+.formulario-de-contacto .formulario-contacto{
+    width: 60%; 
+}
+.formulario-de-contacto .formulario-contacto .form-control{
+   display: flex;
+   align-items: center;
+   font-size: 130%;
+   color: #260C02;
+}
+.formulario-de-contacto .formulario-contacto .form-group{
+   margin: 0.5rem 0.5rem;
+ }
+.formulario-de-contacto .imagen-contacto {
+    margin-right: 1rem;
+    position: relative;
+    width: 40%; 
+    overflow: hidden;
+}
+.formulario-de-contacto .imagen-contacto img {
+    position: absolute;
+    border-radius: 0.5rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.formulario-de-contacto .imagen-contacto img:first-child {
+    opacity: 1;
+} 
+.formulario-de-contacto .contact-btn{
+    background-color:#260C02;
+    color: #60A4BF;
+    border-color: #260C02;
+    text-align: center;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    font-size: 130%;
+}
+.formulario-de-contacto .contact-btn:hover{
+    font-weight: 1000;
+}
+/*Estilo footer*/
+footer{
+    background-color: #260C02;
+    color: #60A4BF;
+    font-size: 130%;
+}
+footer .contain-main-footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 4rem;
+    grid-auto-rows: minmax(100px, auto);
+    padding-bottom: 2rem;
+    padding: 2rem 0.5rem 0 0.5rem;
+    text-align:center;
+}
+footer .contain-main-footer .regulatory ul{
+    list-style-type: none;
+}
+footer .contain-main-footer h4{
+    color: #F2CAB3;
+}
+footer .contain-main-footer a{
+    text-decoration: none;
+    color: #60A4BF;
+}
+footer .contain-main-footer a:hover{
+    color:#F2CAB3;
+}
+footer .contain-main-footer .location iframe{
+    width: 90%;
+}
+footer .contain-main-footer .social-media {
+    display: flex;
+    justify-content: space-around;
+}
+footer .contain-main-footer .social-media svg{
+    width: 7%;     
+}
+footer .contain-main-footer .social-media svg:hover{
+    color:#F2CAB3;
+}
+footer .copy-right{
+    text-align: center;
+    font-size: 100%;
+    color: #BF8563;
+}
+
+/* media queries */
+@media (max-width:1380px){
+    .home .search form{
+        display: flex;
+    }
+    .destinos, 
+    .experiencias,
+    .opiniones,
+    .contacto{
+        padding-top: 10vh;
+    }
+    section .experiencias-hover,
+    section .tarjetas-destinos .card,
+    .opiniones .carousel-inner .card {
+        height: 68vh;
+    }
+}
+@media (max-width:1305px){
+    header .navbar a{
+        font-size: 150%;
+    }
+    .home .search form{
+        display: flex;
+        flex-direction: column;
+        align-items:stretch;
+        text-align: center;
+    }
+    .home .search #origen option,
+    .home .search #destino option,
+    .home .search #fecha_salida,
+    .home .search #fecha_regreso,
+    .home .search #pasajeros{   
+        text-align: center;
+        color:#260C02
+    }
+    .home .search-bar h1{
+        padding-top: 15%;
+    }
+    .home .search #pasajeros{
+        width: 100%;
+       }
+    .home .search .submit-search{
+        margin-top: 5%;
+        margin-left: 0%;
+    }
+    .opiniones .carousel-inner .card {
+        width: 80vh;
+    }
+}
+@media (max-width:1050px){
+    header .navbar a{
+        font-size: 130%;
+        margin: 0.5rem;
+    }
+    section .tarjetas-destinos,
+    section .experiencias-hover{
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .titulos {
+        height: 15vh;
+    }
+    section .experiencias-hover{
+        height: 100vh;
+    }
+}
+@media (max-width:890px){
+    #menu{
+        font-size: 50%;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        position: relative;
+    }
+    #menu::before, #menu::after {
+        content: ''; 
+        position: absolute;
+        height: 2px; 
+        width: 24px;
+        background:#F2CAB3; 
+        transition: transform 0.3s; 
+    }
+    #menu::before {
+        top: 0;
+    }
+    #menu::after {
+        top: 10px;
+    }
+   #menu.active::before{
+        transform: rotate(45deg); 
+    }
+    #menu.active::after {
+        transform: rotate(-45deg); 
+    }
+    header .navbar{
+        position:absolute;
+        top:100%;
+        right:0;
+        left:0;
+        background:#260C02;
+        padding:1rem 2rem;
+        display: none;
+        width: 30vh;
+    }
+    header .navbar.active{
+        display: block;
+    }
+    header .navbar a{
+        display:block;
+        padding:0.5rem 0;
+        background:#260C02;
+    }
+    .formulario-contacto .form-control .row {
+        font-size:50%;
+    }
+    footer .contain-main-footer {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 1rem;
+        text-align:left;
+        padding-bottom: 2rem;
+    }
+    .opiniones .carousel-inner .card{
+        width: 80vh;
+    }
+    .destinos, 
+    .experiencias,
+    .opiniones,
+    .contacto{
+        padding-top: 15vh;
+    }
+    .formulario-de-contacto{
+        margin-top: 0;
+    }
+    .experiencias-hover{
+        padding-top: 0;
+    }
+    .destinos .tarjetas-destinos .card-img-top{
+        height: 30vh;
+    }
+}
+@media (max-width:530px){
+    .formulario-de-contacto .imagen-contacto { 
+        display: none; 
+    }
+    .formulario-de-contacto .formulario-contacto{
+        width: 100%; 
+    }
+    footer{
+        font-size: 80%;
+    }
+    .home .search-bar h1{
+        padding-top: 20%;
+        font-size: 150%;
+    }
+    .destinos,
+    .experiencias,
+    .opiniones{
+        font-size: 80%;
+        width: 100%;
+    }
+    section .tarjetas-destinos,
+    section .experiencias-hover{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .destinos, 
+    .experiencias,
+    .opiniones,
+    .contacto{
+        padding-top: 20vh;
+    }
+    .opiniones .carousel-inner .card{
+        width: 50vh;
+    }
+    section .tarjetas-destinos .card,
+    section .experiencias-hover{
+        width: 50vh;
+        height:auto;
+        
+    }
+    .experiencias-hover{
+        padding-top: 0;
+    }
+}
